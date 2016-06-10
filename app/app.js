@@ -105,7 +105,7 @@ angular
       .state('channels.messages', {
         url: '/{channelId}/messages',
         templateUrl: 'channels/messages.html',
-        controller: 'MessagesCtrl as messagesCtrl'
+        controller: 'MessagesCtrl as messagesCtrl',
         resolve: {
           messages: function($stateParams, Messages){
             return Messages.forChannel($stateParams.channelId).$loaded();
