@@ -59,7 +59,7 @@ angular
             });
           },
           profile: function(Users, Auth){
-            return Auth.$requireAuth().then(function(){
+            return Auth.$requireAuth().then(function(auth){
               return Users.getProfile(auth.uid).$loaded();
             });
           }
