@@ -11,6 +11,8 @@ angular.module('angularfireSlackApp')
       name: ''
     }
 
+    Users.setOnline(profile.$id);
+
     channelsCtrl.createChannel = function(){
       channelsCtrl.channels.$add(channelsCtrl.newChannel).then(function(ref){
         $state.go('channels.messages', {channelId: ref.key()});
