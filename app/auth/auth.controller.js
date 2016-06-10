@@ -8,17 +8,17 @@ angular.module('angularfireSlackApp')
     };
 
     authCtrl.login = function(){
-      Auth.$authWithPasssword(authCtrl.user).then(function(auth){
+      Auth.$authWithPassword(authCtrl.user).then(function(auth){
         $state.go('home');
       }, function(error){
         authCtrl.error = error;
       });
     };
 
-    authCtrl.register = function(){
-      Auth.$createUser(authCtrl.user).then(function(user){
+    authCtrl.register = function (){
+      Auth.$createUser(authCtrl.user).then(function (user){
         authCtrl.login();
-      }, function(error){
+      }, function (error){
         authCtrl.error = error;
       });
     };
