@@ -20,8 +20,11 @@ angular.module('angularfireSlackApp')
     };
 
     channelsCtrl.logout = function(){
-      Auth.$unauth();
-      $state.go('home');
+      channelsCtrl.profile.online = null;
+      channelsCtrl.profile.$save().then(function(){
+        Auth.$unauth();
+        $state.go('home');
+      });
     };
 
   });
